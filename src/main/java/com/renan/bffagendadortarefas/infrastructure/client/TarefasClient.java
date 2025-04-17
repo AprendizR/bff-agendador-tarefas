@@ -3,6 +3,7 @@ package com.renan.bffagendadortarefas.infrastructure.client;
 import com.renan.bffagendadortarefas.business.dto.in.TarefasDTORequest;
 import com.renan.bffagendadortarefas.business.dto.out.TarefasDTOResponse;
 import com.renan.bffagendadortarefas.business.enums.StatusNotificacaoEnum;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @FeignClient(name = "agendador-tarefas", url = "${agendador-tarefas.url}")
+
 public interface TarefasClient {
 
     @PostMapping
